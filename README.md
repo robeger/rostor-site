@@ -1,2 +1,5 @@
 # rostor-site
-Rostor Landing Page
+
+Rostor static landing page.
+
+Current entry point: `index.html`
