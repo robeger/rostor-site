@@ -3,23 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rostor | Automatizare clara pentru firme mici</title>
+  <title>Rostor | Site in constructie</title>
   <meta
     name="description"
-    content="Rostor este o pagina initiala de prezentare pentru automatizari simple: mesaje, fluxuri repetitive si rezumate operationale pentru firme mici."
+    content="Rostor pregateste noul site. Pentru informatii, contact: robert@rostor.ro."
   >
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap");
 
     :root {
-      --bg: #f6efe5;
-      --panel: rgba(255, 248, 240, 0.8);
-      --ink: #1d1a17;
-      --muted: #64584e;
-      --accent: #d85f38;
-      --accent-dark: #8f3418;
-      --line: rgba(29, 26, 23, 0.1);
-      --shadow: 0 24px 60px rgba(76, 43, 28, 0.14);
+      --bg: #fbf1da;
+      --panel: rgba(255, 244, 212, 0.86);
+      --ink: #18130c;
+      --muted: #5d513f;
+      --accent: #f0a81f;
+      --accent-dark: #694300;
+      --line: rgba(24, 19, 12, 0.12);
+      --shadow: 0 28px 70px rgba(88, 62, 12, 0.18);
+      --warning: #222222;
     }
 
     * {
@@ -35,10 +36,16 @@
       font-family: "Space Grotesk", "Segoe UI", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(216, 95, 56, 0.22), transparent 36%),
-        radial-gradient(circle at bottom right, rgba(246, 197, 132, 0.42), transparent 28%),
-        linear-gradient(180deg, #fbf4eb 0%, var(--bg) 52%, #efe2d0 100%);
+        repeating-linear-gradient(
+          -45deg,
+          #f7cf5a 0 28px,
+          #2b2b2b 28px 56px
+        ),
+        linear-gradient(180deg, #fff4c9 0%, var(--bg) 100%);
       min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 20px;
     }
 
     a {
@@ -47,29 +54,15 @@
     }
 
     .shell {
-      width: min(1120px, calc(100% - 32px));
-      margin: 0 auto;
-      padding: 24px 0 56px;
+      width: min(880px, 100%);
     }
 
-    .topbar,
-    .hero,
-    .grid,
-    .steps,
-    .footer-card {
+    .hero {
       backdrop-filter: blur(14px);
       background: var(--panel);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
-    }
-
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      padding: 18px 22px;
-      border-radius: 22px;
+      border-radius: 34px;
     }
 
     .brand {
@@ -82,38 +75,37 @@
     }
 
     .brand-mark {
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), #f4b36e);
-      box-shadow: 0 0 0 8px rgba(216, 95, 56, 0.12);
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background: linear-gradient(135deg, var(--warning) 0 50%, var(--accent) 50% 100%);
+      box-shadow: 0 0 0 8px rgba(240, 168, 31, 0.15);
     }
 
     .badge {
-      padding: 8px 12px;
+      display: inline-flex;
+      padding: 8px 14px;
       border-radius: 999px;
-      background: rgba(216, 95, 56, 0.1);
+      background: rgba(240, 168, 31, 0.16);
       color: var(--accent-dark);
       font-size: 0.92rem;
+      font-weight: 700;
     }
 
     .hero {
-      margin-top: 24px;
-      padding: 56px 28px;
-      border-radius: 30px;
+      padding: 44px 28px;
       overflow: hidden;
       position: relative;
+      text-align: center;
     }
 
     .hero::after {
       content: "";
       position: absolute;
-      right: -60px;
-      top: -40px;
-      width: 240px;
-      height: 240px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(216, 95, 56, 0.22), transparent 70%);
+      inset: 18px;
+      border: 2px dashed rgba(24, 19, 12, 0.12);
+      border-radius: 26px;
+      pointer-events: none;
     }
 
     .eyebrow {
@@ -121,7 +113,7 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent-dark);
-      margin-bottom: 14px;
+      margin: 18px 0 14px;
     }
 
     h1,
@@ -133,6 +125,7 @@
 
     h1 {
       max-width: 760px;
+      margin: 0 auto;
       font-size: clamp(3rem, 8vw, 6.3rem);
     }
 
@@ -146,267 +139,120 @@
     }
 
     .lead {
-      max-width: 720px;
-      margin: 22px 0 0;
+      max-width: 620px;
+      margin: 22px auto 0;
       font-size: 1.1rem;
       line-height: 1.7;
       color: var(--muted);
     }
 
-    .cta-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
-    }
-
-    .button,
-    .button-secondary {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      padding: 0 18px;
-      border-radius: 999px;
-      font-weight: 700;
-      transition: transform 160ms ease, background 160ms ease, color 160ms ease;
-    }
-
-    .button {
-      background: var(--accent);
-      color: #fff8f1;
-    }
-
-    .button-secondary {
-      border: 1px solid var(--line);
-      background: rgba(255, 255, 255, 0.45);
-    }
-
-    .button:hover,
-    .button-secondary:hover {
-      transform: translateY(-2px);
-    }
-
     .mini-note {
-      margin-top: 18px;
+      margin-top: 26px;
       color: var(--muted);
       font-size: 0.96rem;
     }
 
-    .section-title {
-      margin: 52px 0 18px;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      padding: 18px;
-      border-radius: 26px;
-    }
-
-    .card {
-      background: rgba(255, 255, 255, 0.56);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-    }
-
-    .card strong,
-    .step strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1.08rem;
-    }
-
-    .card p,
-    .step p,
-    .footer-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.68;
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-      padding: 18px;
-      border-radius: 26px;
-    }
-
-    .step {
-      background: rgba(29, 26, 23, 0.03);
-      border-radius: 22px;
-      padding: 22px;
-      border: 1px solid var(--line);
-    }
-
-    .step-number {
+    .contact-card {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: rgba(216, 95, 56, 0.14);
-      color: var(--accent-dark);
-      font-size: 0.94rem;
+      margin-top: 28px;
+      padding: 16px 22px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.56);
+      border: 1px solid var(--line);
       font-weight: 700;
-      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
     }
 
-    .footer-card {
-      margin-top: 24px;
-      padding: 24px;
-      border-radius: 26px;
-      display: flex;
-      justify-content: space-between;
-      gap: 18px;
-      align-items: center;
+    .contact-card:hover {
+      background: rgba(255, 255, 255, 0.74);
     }
 
-    .footer-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      color: var(--muted);
+    .sign-wrap {
+      display: grid;
+      place-items: center;
+      margin: 8px 0 18px;
+      padding: 34px 0;
+      overflow: visible;
+      position: relative;
+      z-index: 1;
     }
 
-    @media (max-width: 860px) {
-      .grid,
-      .steps,
-      .footer-card {
-        grid-template-columns: 1fr;
-      }
+    .sign {
+      width: min(220px, 52vw);
+      aspect-ratio: 1;
+      margin: 0 auto;
+      border-radius: 28px;
+      transform: rotate(45deg);
+      background:
+        linear-gradient(
+          135deg,
+          var(--warning) 0 16%,
+          var(--accent) 16% 34%,
+          var(--warning) 34% 50%,
+          var(--accent) 50% 66%,
+          var(--warning) 66% 84%,
+          var(--accent) 84% 100%
+        );
+      border: 10px solid #fff8df;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
+      position: relative;
+    }
 
-      .footer-card {
-        display: grid;
-      }
+    .sign::after {
+      content: "!";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: clamp(4.5rem, 16vw, 8rem);
+      font-weight: 700;
+      color: #fff8df;
+      transform: rotate(-45deg);
     }
 
     @media (max-width: 640px) {
-      .shell {
-        width: min(100% - 20px, 1120px);
-      }
-
-      .topbar,
-      .hero,
-      .grid,
-      .steps,
-      .footer-card {
-        border-radius: 22px;
-      }
-
       .hero {
         padding: 36px 20px;
       }
 
-      .topbar {
-        flex-direction: column;
-        align-items: flex-start;
+      .sign-wrap {
+        padding: 24px 0 14px;
+      }
+
+      .sign {
+        width: min(180px, 54vw);
       }
     }
   </style>
 </head>
 <body>
   <main class="shell">
-    <header class="topbar">
+    <section class="hero">
       <div class="brand">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>Rostor</span>
       </div>
-      <div class="badge">Pagina initiala pentru lansare</div>
-    </header>
-
-    <section class="hero" id="top">
-      <div class="eyebrow">Automatizare practica pentru operatiuni mici si clare</div>
+      <div class="eyebrow">Ne pregatim de lansare</div>
+      <div class="sign-wrap">
+        <div class="sign" aria-hidden="true"></div>
+      </div>
       <h1>
-        Rostor pune ordine
-        <span class="accent-text">in lucrurile repetitive.</span>
+        Site in constructie
+        <span class="accent-text">revenim in curand.</span>
       </h1>
       <p class="lead">
-        O pagina simpla pentru primul pas al site-ului Rostor. Mesaje repetitive, fluxuri de lucru,
-        sarcini operationale si rezumate zilnice pot fi organizate intr-un sistem usor de prezentat,
-        usor de configurat si usor de extins.
+        Lucram la noua prezenta online Rostor. Pana la lansarea completa, pentru orice intrebare
+        sau solicitare ne poti scrie direct pe email.
       </p>
-      <div class="cta-row">
-        <a class="button" href="#despre">Vezi ce poate automatiza</a>
-        <a class="button-secondary" href="#contact">Pregateste pagina de contact</a>
+      <div class="contact-card">
+        <span class="badge">Contact: <a href="mailto:robert@rostor.ro">robert@rostor.ro</a></span>
       </div>
       <p class="mini-note">
-        Structura este mica intentionat, astfel incat site-ul sa poata fi publicat imediat si extins dupa primele validari.
+        Multumim pentru rabdare.
       </p>
-    </section>
-
-    <h2 class="section-title" id="despre">Ce spune pagina acum</h2>
-    <section class="grid">
-      <article class="card">
-        <strong>Mesaje care nu asteapta dupa tine</strong>
-        <p>
-          Rostor poate deveni punctul de plecare pentru raspunsuri rapide, preluare cereri
-          si trimiterea catre persoana potrivita fara haos in conversatii.
-        </p>
-      </article>
-      <article class="card">
-        <strong>Procese repetitive, mai putin manuale</strong>
-        <p>
-          Pagina deschide directia pentru automatizarea taskurilor care se repeta: verificari,
-          confirmari, rutine interne sau pasi administrativi.
-        </p>
-      </article>
-      <article class="card">
-        <strong>Control clar pentru proprietar</strong>
-        <p>
-          Ideea centrala ramane simpla: sistemul lucreaza in fundal, iar tu vezi doar ce trebuie
-          aprobat, verificat sau urmarit.
-        </p>
-      </article>
-    </section>
-
-    <h2 class="section-title">Cum extindem dupa lansarea initiala</h2>
-    <section class="steps">
-      <article class="step">
-        <div class="step-number">01</div>
-        <strong>Validam mesajul</strong>
-        <p>
-          Publicam aceasta versiune scurta ca prezenta initiala si vedem daca mesajul Rostor este
-          clar pentru primele discutii comerciale.
-        </p>
-      </article>
-      <article class="step">
-        <div class="step-number">02</div>
-        <strong>Adaugam contactul real</strong>
-        <p>
-          Urmatorul pas firesc este completarea cu datele de contact finale, formular sau linkuri
-          catre WhatsApp, email si calendar.
-        </p>
-      </article>
-      <article class="step">
-        <div class="step-number">03</div>
-        <strong>Construim pagini dedicate</strong>
-        <p>
-          Dupa ce pozitionarea este stabila, pagina poate creste cu sectiuni pentru servicii,
-          verticale, beneficii concrete si studii de caz.
-        </p>
-      </article>
-    </section>
-
-    <section class="footer-card" id="contact">
-      <div>
-        <strong>Rostor este pregatit pentru un start simplu.</strong>
-        <p>
-          Adauga aici emailul, numarul de telefon sau linkul de programare cand sunt gata.
-          Pana atunci, aceasta pagina functioneaza ca un punct curat de lansare.
-        </p>
-      </div>
-      <div class="footer-links">
-        <span>Email: de configurat</span>
-        <span>Telefon: de configurat</span>
-        <span>Programare demo: de configurat</span>
-      </div>
     </section>
   </main>
 </body>
