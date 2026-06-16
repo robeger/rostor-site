@@ -1,259 +1,273 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rostor | Site in constructie</title>
-  <meta
-    name="description"
-    content="Rostor pregateste noul site. Pentru informatii, contact: robert@rostor.ro."
-  >
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rostor — asistent digital pentru firme românești</title>
+  <meta name="description" content="Rostor pune ordine în mesaje, documente, facturi și termene. Pregătește răspunsuri, urmărește e-Factura și vă ține la curent. Pașii importanți îi aprobați dumneavoastră.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://rostor.ro/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Rostor — asistent digital pentru firme românești">
+  <meta property="og:description" content="Mai puțin timp pierdut cu mesaje, documente, facturi și termene. Pașii importanți îi aprobați dumneavoastră.">
+  <meta property="og:url" content="https://rostor.ro/">
+  <meta property="og:locale" content="ro_RO">
+  <meta name="theme-color" content="#0B0E14">
   <style>
-    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Instrument+Serif:ital@0;1&display=swap");
-
-    :root {
-      --bg: #fbf1da;
-      --panel: rgba(255, 244, 212, 0.86);
-      --ink: #18130c;
-      --muted: #5d513f;
-      --accent: #f0a81f;
-      --accent-dark: #694300;
-      --line: rgba(24, 19, 12, 0.12);
-      --shadow: 0 28px 70px rgba(88, 62, 12, 0.18);
-      --warning: #222222;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: "Space Grotesk", "Segoe UI", sans-serif;
-      color: var(--ink);
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          #f7cf5a 0 28px,
-          #2b2b2b 28px 56px
-        ),
-        linear-gradient(180deg, #fff4c9 0%, var(--bg) 100%);
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .shell {
-      width: min(880px, 100%);
-    }
-
-    .hero {
-      backdrop-filter: blur(14px);
-      background: var(--panel);
-      border: 1px solid var(--line);
-      box-shadow: var(--shadow);
-      border-radius: 34px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-
-    .brand-mark {
-      width: 16px;
-      height: 16px;
-      border-radius: 4px;
-      background: linear-gradient(135deg, var(--warning) 0 50%, var(--accent) 50% 100%);
-      box-shadow: 0 0 0 8px rgba(240, 168, 31, 0.15);
-    }
-
-    .badge {
-      display: inline-flex;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: rgba(240, 168, 31, 0.16);
-      color: var(--accent-dark);
-      font-size: 0.92rem;
-      font-weight: 700;
-    }
-
-    .hero {
-      padding: 44px 28px;
-      overflow: hidden;
-      position: relative;
-      text-align: center;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border: 2px dashed rgba(24, 19, 12, 0.12);
-      border-radius: 26px;
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      font-size: 0.92rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--accent-dark);
-      margin: 18px 0 14px;
-    }
-
-    h1,
-    h2 {
-      margin: 0;
-      line-height: 0.98;
-      font-weight: 700;
-    }
-
-    h1 {
-      max-width: 760px;
-      margin: 0 auto;
-      font-size: clamp(3rem, 8vw, 6.3rem);
-    }
-
-    .accent-text {
-      display: block;
-      font-family: "Instrument Serif", Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
-      color: var(--accent-dark);
-      margin-top: 8px;
-    }
-
-    .lead {
-      max-width: 620px;
-      margin: 22px auto 0;
-      font-size: 1.1rem;
-      line-height: 1.7;
-      color: var(--muted);
-    }
-
-    .mini-note {
-      margin-top: 26px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .contact-card {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 28px;
-      padding: 16px 22px;
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.56);
-      border: 1px solid var(--line);
-      font-weight: 700;
-      position: relative;
-      z-index: 1;
-    }
-
-    .contact-card:hover {
-      background: rgba(255, 255, 255, 0.74);
-    }
-
-    .sign-wrap {
-      display: grid;
-      place-items: center;
-      margin: 8px 0 18px;
-      padding: 34px 0;
-      overflow: visible;
-      position: relative;
-      z-index: 1;
-    }
-
-    .sign {
-      width: min(220px, 52vw);
-      aspect-ratio: 1;
-      margin: 0 auto;
-      border-radius: 28px;
-      transform: rotate(45deg);
-      background:
-        linear-gradient(
-          135deg,
-          var(--warning) 0 16%,
-          var(--accent) 16% 34%,
-          var(--warning) 34% 50%,
-          var(--accent) 50% 66%,
-          var(--warning) 66% 84%,
-          var(--accent) 84% 100%
-        );
-      border: 10px solid #fff8df;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.18);
-      position: relative;
-    }
-
-    .sign::after {
-      content: "!";
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-items: center;
-      font-size: clamp(4.5rem, 16vw, 8rem);
-      font-weight: 700;
-      color: #fff8df;
-      transform: rotate(-45deg);
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        padding: 36px 20px;
-      }
-
-      .sign-wrap {
-        padding: 24px 0 14px;
-      }
-
-      .sign {
-        width: min(180px, 54vw);
-      }
-    }
+    :root{--dark:#0B0E14;--panel:#111827;--panel2:#162033;--cream:#F7F4EC;--cream2:#EFE8D8;--ink:#171412;--muted:#5F6470;--light:#E7ECF3;--light2:#9AA6B6;--amber:#F5BD4F;--amberDark:#B45309;--teal:#37E2C7;--tealDark:#0F766E;--line:rgba(255,255,255,.12);--line2:rgba(23,20,18,.13);--radius:24px;--max:1180px;--serif:Georgia,'Times New Roman',serif;--sans:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;--mono:'SFMono-Regular',Consolas,monospace}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;text-rendering:optimizeLegibility}a{color:inherit}.skip{position:absolute;left:-999px;top:12px;z-index:99;background:var(--teal);color:#00130f;padding:10px 14px;border-radius:12px}.skip:focus{left:12px}.top{position:sticky;top:0;z-index:30;background:rgba(11,14,20,.88);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.top-inner{max-width:var(--max);margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}.brand{display:inline-flex;align-items:center;gap:12px;color:var(--light);text-decoration:none;font-weight:800}.mark{width:30px;height:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:3px;transform:rotate(-2deg)}.mark span{border-radius:5px;background:var(--amber)}.mark span:nth-child(2),.mark span:nth-child(5),.mark span:nth-child(8){background:var(--teal)}.brand strong{font-family:var(--serif);font-size:1.35rem;font-style:italic}nav{display:flex;gap:8px;align-items:center;color:var(--light2);font-size:.92rem}nav a{text-decoration:none;padding:8px 10px;border-radius:999px}nav a:hover,nav a:focus-visible{color:var(--light);background:rgba(255,255,255,.08);outline:none}.section{padding:88px 22px}.section.dark{color:var(--light);background:radial-gradient(circle at 12% 0%,rgba(55,226,199,.18),transparent 30%),radial-gradient(circle at 82% 14%,rgba(245,189,79,.16),transparent 34%),var(--dark)}.container{max-width:var(--max);margin:0 auto}.eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);font-weight:800;margin-bottom:18px}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber)}h1,h2,h3{margin:0;line-height:1.04;letter-spacing:-.045em}h1{font-family:var(--serif);font-size:clamp(3rem,7vw,7rem);max-width:860px}h2{font-family:var(--serif);font-size:clamp(2rem,4vw,4.2rem)}h3{font-size:1.18rem;letter-spacing:-.025em}p{margin:0}.lead{font-size:clamp(1.08rem,1.7vw,1.32rem);color:#D5DEEB;max-width:780px}.muted{color:var(--muted)}.dark .muted{color:var(--light2)}.btns{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:13px 18px;border-radius:999px;text-decoration:none;font-weight:800;border:1px solid transparent;transition:.18s ease}.btn:hover{transform:translateY(-1px)}.btn.primary{background:var(--amber);color:#201203;box-shadow:0 18px 40px rgba(245,189,79,.24)}.btn.secondary{background:rgba(255,255,255,.06);border-color:var(--line);color:var(--light)}.btn.light{background:#FFF9EA;color:var(--ink);border-color:var(--line2)}.hero{min-height:calc(100vh - 64px);display:grid;align-items:center;padding:74px 22px 92px;color:var(--light);background:radial-gradient(circle at 18% 8%,rgba(55,226,199,.22),transparent 26%),radial-gradient(circle at 86% 10%,rgba(245,189,79,.23),transparent 30%),var(--dark);overflow:hidden;position:relative}.hero:after{content:"";position:absolute;inset:auto -12% -36% 45%;height:440px;background:repeating-linear-gradient(45deg,rgba(245,189,79,.1) 0 16px,transparent 16px 32px);transform:rotate(-8deg);pointer-events:none}.hero-grid{position:relative;z-index:1;max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(330px,.78fr);gap:48px;align-items:center}.trust{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px;color:var(--light2);font-size:.94rem}.pill{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);background:rgba(255,255,255,.06);padding:9px 12px;border-radius:999px}.pill:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}.phone-card{background:rgba(17,24,39,.84);border:1px solid var(--line);border-radius:28px;box-shadow:0 26px 80px rgba(0,0,0,.2);backdrop-filter:blur(16px);padding:20px}.card-head{display:flex;justify-content:space-between;color:var(--light2);font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:18px}.msg{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:18px;padding:15px;color:#DAE3F0;margin-bottom:12px}.msg.client{border-left:3px solid var(--amber)}.msg.rostor{border-left:3px solid var(--teal)}.small-actions{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px}.small-actions span{padding:10px 8px;border-radius:12px;text-align:center;font-weight:800;font-size:.84rem}.approve{background:rgba(55,226,199,.18);color:var(--teal)}.edit{background:rgba(245,189,79,.16);color:var(--amber)}.reject{background:rgba(255,255,255,.07);color:var(--light2)}.mini-work{margin-top:16px;padding:18px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:24px}.status-row{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);color:var(--light2)}.status-row:last-child{border-bottom:0}.status{color:var(--teal);font-weight:800}.intro{max-width:760px;margin-bottom:34px}.intro.center{text-align:center;margin-left:auto;margin-right:auto}.grid{display:grid;gap:18px}.grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}.grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}.box{background:#FFF9EA;border:1px solid var(--line2);border-radius:var(--radius);padding:24px;box-shadow:0 22px 70px rgba(0,0,0,.08)}.box.dark{background:rgba(17,24,39,.72);border-color:var(--line);box-shadow:none}.box h3{margin-bottom:10px}.icon{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:rgba(245,189,79,.18);color:var(--amberDark);font-weight:900;margin-bottom:16px}.dark .icon{background:rgba(55,226,199,.12);color:var(--teal)}.steps{counter-reset:step;display:grid;gap:14px}.step{counter-increment:step;display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:start;background:#FFF9EA;border:1px solid var(--line2);border-radius:22px;padding:18px}.step:before{content:counter(step);width:46px;height:46px;border-radius:16px;background:var(--dark);color:var(--amber);display:grid;place-items:center;font-weight:900}.step.approval{border-color:rgba(15,118,110,.35);box-shadow:0 0 0 4px rgba(55,226,199,.12)}.programs{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}.programs span{background:rgba(255,255,255,.08);border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:var(--light)}.workspace{background:#0E1522;border:1px solid var(--line);border-radius:28px;padding:18px;box-shadow:0 30px 90px rgba(0,0,0,.22)}.workspace-bar{display:flex;gap:8px;margin-bottom:14px}.dot{width:10px;height:10px;border-radius:50%;background:var(--amber)}.dot:nth-child(2){background:var(--teal)}.dot:nth-child(3){background:#E7ECF3}.command{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--light2);margin-bottom:14px}.table{display:grid;gap:10px}.table-row{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:14px;padding:12px;color:var(--light2)}.table-row strong{color:var(--light)}.matrix{display:grid;grid-template-columns:1fr 1fr;gap:18px}.matrix .head{font-weight:900;color:var(--tealDark);margin-bottom:12px}.dark .matrix .head{color:var(--teal)}.matrix ul{margin:0;padding-left:18px}.matrix li{margin:8px 0}.faq details{background:#FFF9EA;border:1px solid var(--line2);border-radius:18px;margin:10px 0;padding:0}.faq summary{cursor:pointer;font-weight:900;padding:18px 20px}.faq details p{padding:0 20px 18px;color:var(--muted)}.diagram{padding:24px}.diagram-flow{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center}.nodes{display:grid;gap:8px}.node{border:1px solid var(--line);background:rgba(255,255,255,.06);border-radius:14px;padding:10px 12px;color:var(--light2);text-align:center}.node.center{background:rgba(245,189,79,.17);color:var(--light);min-width:150px}.node.approval{border-color:rgba(55,226,199,.55);color:var(--teal)}.contact{display:grid;grid-template-columns:1fr .9fr;gap:28px;align-items:start;background:var(--dark);color:var(--light);border-radius:32px;padding:32px;border:1px solid var(--line)}.contact-data{display:grid;gap:12px}.contact-data div{background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;padding:14px;color:var(--light2)}.contact-data strong{color:var(--light)}footer{background:var(--dark);color:var(--light2);padding:28px 22px;border-top:1px solid var(--line)}footer .container{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}@media(max-width:900px){nav{display:none}.hero-grid,.grid.cols-3,.grid.cols-2,.matrix,.contact,.diagram-flow{grid-template-columns:1fr}.hero{min-height:auto}.section{padding:68px 18px}.table-row{grid-template-columns:1fr}.small-actions{grid-template-columns:1fr}.programs span{width:100%;text-align:center}.diagram-flow .node.center{min-width:auto}}@media(max-width:560px){.top-inner{padding:12px 16px}.hero{padding:52px 18px 70px}h1{font-size:clamp(2.6rem,16vw,4.2rem)}.btn{width:100%}.box,.contact{padding:20px;border-radius:20px}.section{padding:56px 16px}.step{grid-template-columns:1fr}.step:before{width:40px;height:40px}}
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Rostor","url":"https://rostor.ro/","email":"robert@rostor.ro","telephone":"+40733285440","areaServed":"RO","founder":{"@type":"Person","name":"Robert Minciunescu"},"address":{"@type":"PostalAddress","addressLocality":"Pitești","addressRegion":"Argeș","addressCountry":"RO"}}
+  </script>
 </head>
 <body>
-  <main class="shell">
-    <section class="hero">
-      <div class="brand">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>Rostor</span>
+  <a class="skip" href="#continut">Sari la conținut</a>
+  <header class="top" aria-label="Navigare principală">
+    <div class="top-inner">
+      <a class="brand" href="#top" aria-label="Rostor"><span class="mark" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><strong>Rostor</strong></a>
+      <nav>
+        <a href="#ce-face">Ce face</a><a href="#cum">Cum funcționează</a><a href="#instrumente">Instrumente</a><a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="continut">
+    <section class="hero" id="top">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">asistent digital pentru firme românești</div>
+          <h1>Mai puțin timp pierdut cu mesaje, documente, facturi și termene.</h1>
+          <p class="lead" style="margin-top:24px">Rostor pune ordine în munca repetitivă din firmă: pregătește răspunsuri pe WhatsApp, citește documente, pregătește facturi și urmărește termene. Pașii importanți îi aprobați dumneavoastră.</p>
+          <p class="lead" style="margin-top:14px">Funcționează cu instrumentele pe care le folosiți deja — Saga, SmartBill, Oblio, WhatsApp, SPV și portaluri de furnizori — și preia pașii manuali dintre ele.</p>
+          <div class="btns"><a class="btn primary" href="#contact">Programați o discuție</a><a class="btn secondary" href="#cum">Vezi cum funcționează</a></div>
+          <div class="trust"><span class="pill">Aprobări pentru pașii importanți</span><span class="pill">Date tratate separat, în Europa</span><span class="pill">Pornim de la un singur proces</span></div>
+        </div>
+        <aside class="phone-card" aria-label="Exemplu de aprobare Rostor">
+          <div class="card-head"><span>aprobare pe telefon</span><span>Rostor</span></div>
+          <div class="msg client"><strong>Client:</strong> Aveți preț pentru kit distribuție?</div>
+          <div class="msg rostor"><strong>Rostor:</strong> Am pregătit răspunsul, oferta și următorul pas. Trimitem către client?</div>
+          <div class="small-actions"><span class="approve">Aprobă</span><span class="edit">Modifică</span><span class="reject">Respinge</span></div>
+          <div class="mini-work">
+            <div class="card-head"><span>panou de lucru</span><span>astăzi</span></div>
+            <div class="status-row"><span>3 mesaje urgente</span><span class="status">de verificat</span></div>
+            <div class="status-row"><span>2 facturi pregătite</span><span class="status">de aprobat</span></div>
+            <div class="status-row"><span>1 termen ANAF</span><span class="status">în 3 zile</span></div>
+          </div>
+        </aside>
       </div>
-      <div class="eyebrow">Ne pregatim de lansare</div>
-      <div class="sign-wrap">
-        <div class="sign" aria-hidden="true"></div>
+    </section>
+
+    <section class="section" id="problema">
+      <div class="container">
+        <div class="intro">
+          <div class="eyebrow">unde se pierde timpul</div>
+          <h2>Într-o firmă, timpul se pierde între programe, mesaje și aprobări.</h2>
+          <p class="muted" style="margin-top:18px;font-size:1.12rem">Nu doar în munca propriu-zisă. Se pierde în pași mici care rămân blocați între oameni și programe.</p>
+        </div>
+        <div class="grid cols-3">
+          <article class="box"><div class="icon">1</div><h3>Mesaje pe WhatsApp</h3><p class="muted">Nu apucați să răspundeți la timp, iar clientul pleacă la altcineva.</p></article>
+          <article class="box"><div class="icon">2</div><h3>Documente și facturi</h3><p class="muted">Căutate prin e-mail și telefon, recitite și completate de mână.</p></article>
+          <article class="box"><div class="icon">3</div><h3>Furnizori</h3><p class="muted">Verificați pe rând, fiecare pe alt portal, cu altă parolă.</p></article>
+          <article class="box"><div class="icon">4</div><h3>Termene</h3><p class="muted">Memorate, scrise în agendă sau în mesaje pe telefon.</p></article>
+          <article class="box"><div class="icon">5</div><h3>Facturi neîncasate</h3><p class="muted">Uitate, fără să le mai urmărească cineva la momentul potrivit.</p></article>
+          <article class="box"><div class="icon">6</div><h3>Aprobări</h3><p class="muted">Se adună până când ziua se umple de întreruperi.</p></article>
+        </div>
       </div>
-      <h1>
-        Site in constructie
-        <span class="accent-text">revenim in curand.</span>
-      </h1>
-      <p class="lead">
-        Lucram la noua prezenta online Rostor. Pana la lansarea completa, pentru orice intrebare
-        sau solicitare ne poti scrie direct pe email.
-      </p>
-      <div class="contact-card">
-        <span class="badge">Contact: <a href="mailto:robert@rostor.ro">robert@rostor.ro</a></span>
+    </section>
+
+    <section class="section dark" id="ce-face">
+      <div class="container">
+        <div class="intro center">
+          <div class="eyebrow">ce face Rostor</div>
+          <h2>Primește, pregătește, urmărește și cere aprobare.</h2>
+          <p class="muted" style="margin-top:18px;font-size:1.12rem">Preia munca repetitivă de pe umerii dumneavoastră și ai colegilor, fără să ascundă deciziile importante.</p>
+        </div>
+        <div class="grid cols-3">
+          <article class="box dark"><div class="icon">✉</div><h3>Pregătește răspunsuri pe WhatsApp</h3><p class="muted">Aranjează mesajele după importanță și pregătește răspunsuri clare. Mesajele importante pleacă doar după aprobare.</p></article>
+          <article class="box dark"><div class="icon">▣</div><h3>Citește documente</h3><p class="muted">Primește o factură, un aviz sau o ofertă și scoate datele importante: cine, ce, cât, când.</p></article>
+          <article class="box dark"><div class="icon">₿</div><h3>Pregătește facturi și oferte</h3><p class="muted">Completează datele pe care le are și pregătește urmăriri pentru plăți întârziate sau documente lipsă.</p></article>
+          <article class="box dark"><div class="icon">⏱</div><h3>Ține evidența termenelor</h3><p class="muted">Vă amintește din timp de termene, verificări, declarații și pași care nu trebuie ratați.</p></article>
+          <article class="box dark"><div class="icon">A</div><h3>Ajută la e-Factura și SPV</h3><p class="muted">Pregătește datele, urmărește statusul și recipisele. Trimiterea, unde este activată, se face doar după aprobare.</p></article>
+          <article class="box dark"><div class="icon">☀</div><h3>Vă spune dimineața ce contează</h3><p class="muted">Mesaje noi, ce e de aprobat, termene care se apropie, facturi de urmărit. Cinci rânduri utile, nu un raport lung.</p></article>
+        </div>
       </div>
-      <p class="mini-note">
-        Multumim pentru rabdare.
-      </p>
+    </section>
+
+    <section class="section" id="concret">
+      <div class="container">
+        <div class="intro center">
+          <div class="eyebrow">mai concret</div>
+          <h2>Cum arată Rostor într-o zi de lucru.</h2>
+        </div>
+        <div class="grid cols-2">
+          <article class="box"><h3>Pe telefon, prin Telegram</h3><p class="muted">Când sunteți în mișcare, primiți aprobări, alerte și rezumatul zilei. Puteți scrie scurt: „ce trebuie aprobat azi?”, „oprește trimiterea mesajelor”, „caută contractul X”.</p></article>
+          <article class="box"><h3>La birou, în panoul de lucru</h3><p class="muted">Când aveți timp de lucru la calculator, vedeți liste, tabele, documente, aprobări și sarcini. Panoul se adaptează la ce cereți, dar nu ia decizii în locul dumneavoastră.</p></article>
+          <article class="box"><h3>Sarcini cu stare vizibilă</h3><p class="muted">Fiecare cerere poate fi urmărită: primit, în lucru, așteaptă informații, de aprobat, finalizat sau blocat.</p></article>
+          <article class="box"><h3>Documente găsite rapid</h3><p class="muted">Puteți cere documente de firmă pe telefon sau în panou: „trimite-mi certificatul constatator”, „găsește contractul X”, „pregătește pachetul pentru contabil”.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="panou">
+      <div class="container">
+        <div class="grid cols-2" style="align-items:center">
+          <div>
+            <div class="eyebrow">spațiu de lucru</div>
+            <h2>Un panou care arată ce aveți de făcut, nu doar un răspuns lung.</h2>
+            <p class="muted" style="margin-top:18px;font-size:1.12rem">Pe telefon sunt bune mesajele scurte. Pe calculator aveți nevoie de liste, tabele, aprobări și documente. Rostor păstrează același fir de lucru între telefon și panoul de lucru.</p>
+            <div class="btns"><a class="btn primary" href="#contact">Vreau să văd cum ar arăta pentru firma mea</a></div>
+          </div>
+          <div class="workspace" aria-label="Exemplu de panou de lucru Rostor">
+            <div class="workspace-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="command">Arată-mi ce trebuie aprobat astăzi și ce termene se apropie.</div>
+            <div class="table">
+              <div class="table-row"><strong>Ofertă piese</strong><span>de aprobat</span><span>urgent</span></div>
+              <div class="table-row"><strong>Factură pregătită</strong><span>verificare</span><span>azi</span></div>
+              <div class="table-row"><strong>e-Factura</strong><span>recipisă</span><span>mâine</span></div>
+              <div class="table-row"><strong>Client restant</strong><span>memento</span><span>în lucru</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cum">
+      <div class="container">
+        <div class="intro">
+          <div class="eyebrow">cum funcționează</div>
+          <h2>Îi scrieți în română ce aveți nevoie. Rostor transformă cererea în pași de lucru.</h2>
+        </div>
+        <div class="steps">
+          <div class="step"><div><h3>Primește</h3><p class="muted">Un mesaj, un document sau o sarcină ajunge la Rostor.</p></div></div>
+          <div class="step"><div><h3>Adună</h3><p class="muted">Caută informațiile necesare în documente, în istoricul firmei, la furnizori sau în instrumentele conectate.</p></div></div>
+          <div class="step"><div><h3>Pregătește</h3><p class="muted">Face răspunsul, factura, oferta, mementoul sau lista de pași următori.</p></div></div>
+          <div class="step approval"><div><h3>Cere aprobare</h3><p class="muted">La pașii cu risc — bani, mesaje trimise către clienți sau parteneri, ANAF, furnizori — vă întreabă întâi.</p></div></div>
+          <div class="step"><div><h3>Duce la capăt</h3><p class="muted">După aprobare, trimite, înregistrează, urmărește rezultatul și păstrează istoricul.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="instrumente">
+      <div class="container">
+        <div class="intro center">
+          <div class="eyebrow">fără schimbări forțate</div>
+          <h2>Nu înlocuiește ce folosiți deja.</h2>
+          <p class="muted" style="margin-top:18px;font-size:1.12rem">Rămâneți pe Saga, SmartBill sau Oblio. WhatsApp rămâne canalul pentru clienți. SPV rămâne locul pentru ANAF. Portalurile furnizorilor rămân acolo unde sunt.</p>
+        </div>
+        <div class="programs" aria-label="Instrumente cu care Rostor poate funcționa"><span>WhatsApp</span><span>Telegram</span><span>Saga</span><span>SmartBill</span><span>Oblio</span><span>ANAF / SPV</span><span>e-Factura</span><span>e-mail</span><span>documente</span><span>portaluri furnizori</span></div>
+        <p class="lead" style="margin:30px auto 0;max-width:850px;text-align:center">Rostor funcționează cu aceste instrumente și preia pașii manuali dintre ele: copiere de date, verificări, urmăriri, răspunsuri pregătite, mementouri și liste de aprobat.</p>
+      </div>
+    </section>
+
+    <section class="section" id="exemple">
+      <div class="container">
+        <div class="intro">
+          <div class="eyebrow">exemple scurte</div>
+          <h2>Procese concrete, nu promisiuni vagi.</h2>
+        </div>
+        <div class="grid cols-3">
+          <article class="box"><h3>Piese auto</h3><p class="muted">Un client cere prețul pentru mai multe piese. Rostor adună informațiile disponibile, pregătește oferta și o trimite la aprobare.</p></article>
+          <article class="box"><h3>Contabilitate</h3><p class="muted">Documentele vin în neorânduială. Rostor le citește, le așază și vă amintește ce lipsește și ce termene se apropie.</p></article>
+          <article class="box"><h3>Firmă de servicii</h3><p class="muted">Sortează cererile, pregătește oferte și urmărește facturile neplătite.</p></article>
+          <article class="box"><h3>Juridic și consultanță</h3><p class="muted">O solicitare inițială devine o listă de informații și documente necesare. Mesajele sensibile trec prin aprobare.</p></article>
+          <article class="box"><h3>Medical și programări</h3><p class="muted">Programări, confirmări, acte cerute pacienților și mesaje delicate, ținute în ordine și trimise doar cu control.</p></article>
+          <article class="box"><h3>Asigurări și brokeraj</h3><p class="muted">Polițe care se apropie de reînnoire, documente de la clienți și informații din mai multe portaluri, urmărite într-un singur fir.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark">
+      <div class="container intro center" style="margin-bottom:0">
+        <div class="eyebrow">pasul următor</div>
+        <h2>Hai să vedem unde pierdeți timp în firmă.</h2>
+        <p class="muted" style="margin-top:18px;font-size:1.12rem">Fără prezentare lungă, fără presiune. Ne uităm împreună la un proces — mesaje, facturi, documente, termene sau aprobări — și vedem dacă Rostor îl poate pune în ordine.</p>
+        <div class="btns" style="justify-content:center"><a class="btn primary" href="#contact">Programați o discuție</a><a class="btn secondary" href="https://wa.me/40733285440?text=Bun%C4%83%20ziua%2C%20vreau%20s%C4%83%20discut%C4%83m%20despre%20Rostor." target="_blank" rel="noopener">Scrieți pe WhatsApp</a></div>
+      </div>
+    </section>
+
+    <section class="section" id="valori">
+      <div class="container">
+        <div class="intro center"><div class="eyebrow">misiune și valori</div><h2>Claritate, control și ordine în munca de zi cu zi.</h2></div>
+        <div class="grid cols-3">
+          <article class="box"><h3>Ordine</h3><p class="muted">Mai puțin haos, mai puțin „unde era documentul acela”, mai puțin timp pierdut între programe.</p></article>
+          <article class="box"><h3>Control uman</h3><p class="muted">Rostor pregătește. Dumneavoastră decideți ce pleacă mai departe.</p></article>
+          <article class="box"><h3>Respect pentru ce există</h3><p class="muted">Funcționează cu instrumentele pe care le folosiți deja, fără să le înlocuiască din prima zi.</p></article>
+          <article class="box"><h3>Siguranță</h3><p class="muted">Datele fiecărui client sunt tratate separat, pe infrastructură dedicată, în Europa.</p></article>
+          <article class="box"><h3>Claritate</h3><p class="muted">Vă spunem ce face, ce nu face și unde este nevoie de aprobarea dumneavoastră.</p></article>
+          <article class="box"><h3>România</h3><p class="muted">WhatsApp, ANAF, e-Factura, SPV, documente, furnizori, realitatea din România.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limite">
+      <div class="container">
+        <div class="intro center"><div class="eyebrow">control</div><h2>Ce preia Rostor și ce rămâne la decizia dumneavoastră.</h2><p class="muted" style="margin-top:18px;font-size:1.12rem">Rostor face munca de pregătire, verificare și urmărire. Deciziile importante rămân la om.</p></div>
+        <div class="matrix">
+          <div class="box"><div class="head">Rostor preia</div><ul><li>Mesaje, documente, facturi și termene puse în ordine</li><li>Răspunsuri, oferte și facturi pregătite</li><li>Date importante extrase din documente</li><li>Mementouri și urmăriri</li><li>Rezumatul dimineții</li></ul></div>
+          <div class="box"><div class="head">Dumneavoastră decideți</div><ul><li>Prioritățile firmei și pașii importanți</li><li>Ce pleacă oficial către client sau partener</li><li>Verificarea finală a documentelor sensibile</li><li>Confirmarea fiscală și trimiterea, unde este activată</li><li>Ce se face primul</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="echipa">
+      <div class="container">
+        <div class="grid cols-2">
+          <div><div class="eyebrow">astăzi</div><h2>Cum se folosește Rostor acum.</h2><p class="muted" style="margin-top:18px;font-size:1.12rem">Astăzi, Rostor este construit pentru firme conduse direct de antreprenor sau administrator, care vor să pună la punct un proces clar, nu toată firma deodată.</p></div>
+          <div><div class="eyebrow">în dezvoltare</div><h2>Lucrul în echipă, pas cu pas.</h2><p class="muted" style="margin-top:18px;font-size:1.12rem">Pe măsură ce firma crește, Rostor va putea lucra cu mai multe persoane: vânzări, contabilitate, operatori, manageri. Fiecare persoană va vedea doar ce are nevoie pentru rolul ei.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="intrebari">
+      <div class="container">
+        <div class="intro center"><div class="eyebrow">întrebări frecvente</div><h2>Răspunsuri scurte, înainte de discuție.</h2></div>
+        <div style="max-width:900px;margin:0 auto">
+          <details><summary>Ce este Rostor?</summary><p>Rostor este un asistent digital pentru firma dumneavoastră. Preia munca repetitivă — mesaje, documente, facturi, termene — o pregătește și o pune în ordine între instrumentele pe care le folosiți deja.</p></details>
+          <details><summary>Este doar un program de chat?</summary><p>Nu. Conversația este doar felul în care îi spuneți ce aveți nevoie. Rostor citește documente, pregătește facturi și oferte, urmărește termene și ține evidența pașilor de lucru.</p></details>
+          <details><summary>Înlocuiește Saga, SmartBill sau Oblio?</summary><p>Nu. Rămâneți pe ce folosiți. Rostor funcționează cu aceste instrumente și preia partea manuală dintre pași.</p></details>
+          <details><summary>Cum îl folosesc concret?</summary><p>Pe telefon primiți aprobări, alerte și rezumate. La birou folosiți panoul de lucru, unde îi scrieți în română ce aveți nevoie și primiți liste, tabele, pași, documente sau aprobări.</p></details>
+          <details><summary>Poate trimite singur mesaje clienților?</summary><p>Mesajele simple, fără risc, pot fi trimise în limitele stabilite. Orice mesaj important, delicat sau care vorbește oficial în numele firmei trece întâi prin aprobare.</p></details>
+          <details><summary>Cum stă treaba cu ANAF și e-Factura?</summary><p>Rostor poate pregăti datele, vă poate ajuta să urmăriți statusul și recipisele și vă amintește ce trebuie verificat. Trimiterea, acolo unde este activată, se face doar după aprobare. Rostor nu înlocuiește contabilul și nu promite rezultate fiscale fără verificare umană.</p></details>
+          <details><summary>Merge dacă firma mea nu are conectări automate între programe?</summary><p>De cele mai multe ori, da. Putem lucra cu exporturi de fișiere, e-mail, documente și alte căi sigure. La prima discuție ne uităm la ce folosiți și vă spunem concret ce se poate.</p></details>
+          <details><summary>Ce date vede Rostor și unde stau?</summary><p>Doar datele de care are nevoie pentru procesul stabilit. Datele fiecărui client sunt tratate separat, pe infrastructură dedicată, în Europa.</p></details>
+          <details><summary>Cât durează până văd rezultate?</summary><p>Pornim de la un singur proces, cel care vă consumă cel mai mult timp. Primele rezultate pot apărea în câteva săptămâni, întâi cu aprobare la tot, ca să prindeți încredere.</p></details>
+          <details><summary>Pentru ce firme este potrivit?</summary><p>Pentru firme românești cu aproximativ 5–50 de oameni, care au crescut, dar încă pierd timp cu muncă manuală între mesaje, documente, facturi, termene și aprobări. Poate funcționa și pentru firme mai mari, dacă pornim cu un departament sau un proces clar.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="scheme">
+      <div class="container">
+        <div class="intro center"><div class="eyebrow">scheme vizuale</div><h2>Din informații împrăștiate, în pași de lucru vizibili.</h2></div>
+        <div class="grid cols-2">
+          <article class="box dark diagram"><h3>Munca din firmă, pusă în ordine</h3><div class="diagram-flow" style="margin-top:18px"><div class="nodes"><div class="node">WhatsApp</div><div class="node">E-mail</div><div class="node">Documente</div><div class="node">Facturi</div><div class="node">ANAF / SPV</div><div class="node">Furnizori</div></div><div class="node center"><strong>Rostor</strong><br><span>adună · verifică · pregătește</span></div><div class="nodes"><div class="node">Răspunsuri pregătite</div><div class="node">Facturi verificate</div><div class="node">Termene urmărite</div><div class="node approval">Aprobări</div><div class="node">Rezumat zilnic</div></div></div></article>
+          <article class="box dark diagram"><h3>Cum comandați Rostor</h3><div class="diagram-flow" style="margin-top:18px"><div class="nodes"><div class="node">Telegram</div><div class="node">aprobări</div><div class="node">alerte</div><div class="node">rezumat</div></div><div class="node center"><strong>Rostor</strong><br><span>păstrează firul sarcinilor</span></div><div class="nodes"><div class="node">panou de lucru</div><div class="node">liste</div><div class="node">tabele</div><div class="node approval">aprobări</div></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="siguranta">
+      <div class="container grid cols-2" style="align-items:center">
+        <div><div class="eyebrow">siguranță și control</div><h2>Rostor nu lucrează pe ascuns.</h2><p class="muted" style="margin-top:18px;font-size:1.12rem">Tot ce face rămâne în istoric. Pașii care costă bani, ajung la clienți sau parteneri, țin de ANAF sau pot avea consecințe importante trec prin aprobarea dumneavoastră.</p></div>
+        <div class="box"><h3>Date tratate separat, în Europa</h3><p class="muted">Datele fiecărui client sunt tratate separat, pe infrastructură dedicată, în Europa. Rostor nu promite rezultate fiscale fără verificare umană și nu înlocuiește contabilul.</p><div class="btns"><a class="btn primary" href="mailto:robert@rostor.ro?subject=Discu%C8%9Bie%20Rostor">Programați o discuție</a></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container contact">
+        <div><div class="eyebrow">contact</div><h2>Vorbiți direct cu Robert.</h2><p class="muted" style="margin-top:18px;font-size:1.12rem">Rostor este construit de Robert Minciunescu, pentru firme românești care vor să reducă munca manuală fără să schimbe tot ce folosesc deja.</p><p class="muted" style="margin-top:16px">Dacă ne-am întâlnit la un eveniment de afaceri, scrieți-mi direct și pornim de la procesul care vă consumă cel mai mult timp.</p></div>
+        <div class="contact-data" aria-label="Date de contact">
+          <div><strong>Nume</strong><br>Robert Minciunescu</div>
+          <div><strong>Rol</strong><br>fondator Rostor</div>
+          <div><strong>Telefon / WhatsApp</strong><br><a href="https://wa.me/40733285440" target="_blank" rel="noopener">+40 733 285 440</a></div>
+          <div><strong>E-mail</strong><br><a href="mailto:robert@rostor.ro">robert@rostor.ro</a></div>
+          <div><strong>Localizare</strong><br>Pitești, Argeș, România</div>
+          <div><div class="btns" style="margin-top:0"><a class="btn primary" href="https://wa.me/40733285440?text=Bun%C4%83%20ziua%2C%20vreau%20s%C4%83%20discut%C4%83m%20despre%20Rostor." target="_blank" rel="noopener">Scrieți pe WhatsApp</a><a class="btn light" href="mailto:robert@rostor.ro?subject=Discu%C8%9Bie%20Rostor">Scrieți pe e-mail</a></div></div>
+        </div>
+      </div>
     </section>
   </main>
+
+  <footer><div class="container"><span>© 2026 Rostor. Asistent digital pentru firme românești.</span><span>Pitești, Argeș · robert@rostor.ro · +40 733 285 440</span></div></footer>
 </body>
 </html>
