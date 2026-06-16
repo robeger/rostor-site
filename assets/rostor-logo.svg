@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Logo Rostor</title>
+  <desc id="desc">Om stilizat care împinge un pătrat în aliniere, lângă trei pătrate verticale și textul Rostor.</desc>
+  <rect width="1024" height="1024" rx="52" fill="#fffdf8"/>
+  <g transform="translate(278 134)">
+    <rect x="238" y="0" width="122" height="122" rx="10" fill="#0f2136"/>
+    <rect x="204" y="152" width="152" height="124" rx="10" fill="#d8ad5c"/>
+    <rect x="238" y="306" width="122" height="122" rx="10" fill="#0f2136"/>
+    <circle cx="134" cy="205" r="17" fill="#0f2136"/>
+    <path d="M118 228c-18 24-34 52-48 82-11 24-21 49-28 75h31c8-26 18-49 30-69 11-18 22-34 35-48l26 35 25-18-32-48c13-12 24-25 34-40" fill="#0f2136"/>
+    <path d="M188 200c19-15 28-32 34-46" fill="none" stroke="#0f2136" stroke-width="14" stroke-linecap="round"/>
+    <path d="M42 386h144" stroke="#0f2136" stroke-width="5" stroke-linecap="round" opacity=".72"/>
+  </g>
+  <text x="512" y="760" text-anchor="middle" font-family="Avenir Next, Inter, Segoe UI, Arial, sans-serif" font-size="136" font-weight="300" letter-spacing="14" fill="#0f2136">Rostor</text>
+</svg>
