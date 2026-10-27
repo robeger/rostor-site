@@ -1,0 +1,3 @@
+Rostor preview workflow verification — 2026-10-28.
+Branch: preview/cloudflare-workflow
+This file verifies a non-production version upload. It is not a production release.
