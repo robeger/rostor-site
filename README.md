@@ -1,6 +1,15 @@
-# rostor-site
+# site/ — rostor.ro
 
-Rostor static landing page.
+Site-ul public Rostor (static). Face parte din repository-ul Rostor din 2026-11-10; istoria vine din
+`robeger/rostor-site`. Se editează doar aici. Butoanele de cont duc la portal (`services/portal`); adresa
+portalului e într-un singur loc, `assets/signup.js`.
+
+Până la mutarea build-ului Cloudflare pe repository-ul Rostor, publicarea trece prin `robeger/rostor-site`
+(vezi `docs/workspace-si-publicare-site.md`):
+
+    git subtree push --prefix=site https://github.com/robeger/rostor-site.git preview/<tema>
+
+Static landing page.
 
 Current entry point: `index.html`
 
