@@ -309,3 +309,42 @@ html{scroll-behavior:smooth}.symbols{position:absolute;width:0;height:0;overflow
 .thanks p{font-size:clamp(17px,1.5vw,23px);margin-top:20px;max-width:680px}
 .thanks .btn{margin-top:30px}
 @media(max-width:760px){.request-grid{grid-template-columns:1fr}.request-pair{grid-template-columns:1fr}.request-form .btn{width:100%}}
+/* Pagina principală, varianta 2 (2026-11-25): mesajul și demonstrația în primul ecran, scurtături, subsol cu formular. */
+.hero-intro{background:var(--black);color:var(--paper);text-align:center;padding-block:clamp(34px,4.4vw,72px) clamp(110px,9vw,150px)}
+.hero-intro .eyebrow{color:var(--yellow);font-weight:750;font-size:14px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px}
+.hero-intro h1{font-size:clamp(40px,5.4vw,90px);line-height:1.03;max-width:1180px;margin-inline:auto;letter-spacing:-.01em}
+.hero-intro h1 span{color:var(--yellow);display:block}
+.hero-lead{font-size:clamp(17px,1.5vw,23px);line-height:1.4;max-width:780px;margin:20px auto 0;color:#e6e4dc}
+.hero-intro .hero-actions{justify-content:center}
+.demo-stage{position:relative;margin-top:calc(-1 * clamp(80px,7vw,120px));background:linear-gradient(var(--black) 0 clamp(80px,7vw,120px),var(--paper) 0);padding-bottom:clamp(20px,2vw,32px)}
+.demo-stage .live-demo{background:var(--white);border:1px solid var(--black);border-radius:16px;padding:clamp(14px,2vw,28px)}
+.hero-works{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px;margin-top:18px;font-size:14px}
+.hero-works span{border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--white)}
+.hero-works .hero-works-label{border:0;background:none;font-weight:750;color:var(--muted);padding-inline:0 4px}
+.hero-works a{font-weight:700}
+.shortcuts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;padding-block:8px clamp(36px,4vw,64px)}
+.shortcuts a{display:grid;grid-template-columns:auto 1fr;gap:2px 12px;align-items:center;padding:16px 18px;border:1px solid var(--black);border-radius:var(--radius);background:var(--white);text-decoration:none;color:inherit;transition:background .15s}
+.shortcuts a:hover{background:var(--yellow)}
+.shortcuts .icon{grid-row:span 2;width:24px;height:24px}
+.shortcuts b{font-weight:750;font-size:clamp(15px,1.2vw,18px)}
+.shortcuts small{color:var(--muted);font-size:13px}
+.how{background:var(--paper)}
+.how .feature-steps{margin-top:clamp(18px,2vw,30px)}
+.final-cta .btn-outline{border-color:var(--black)}
+.site-footer>.wrap{display:block;padding-block:clamp(44px,5vw,80px) 28px}
+.footer-top{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:start}
+.footer-form h2{font-size:clamp(36px,3.6vw,58px);line-height:1.05}
+.footer-form h2 span{color:var(--yellow);display:block}
+.footer-form>p{color:#cfcfc7;margin-top:14px;font-size:clamp(15px,1.2vw,18px);max-width:560px}
+.footer-form .request-form{margin-top:22px;color:var(--black)}
+.footer-form .request-note{font-size:13px;color:#a9a79f;margin-top:12px}
+.footer-form .request-note a{color:inherit}
+.footer-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 28px;padding-top:6px}
+.fcol h3{font-family:var(--body);font-size:13px;font-weight:750;letter-spacing:.08em;text-transform:uppercase;color:var(--yellow);margin-bottom:12px}
+.fcol ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fcol a,.fcol button{color:var(--paper);text-decoration:none;font:inherit;font-size:15px;background:none;border:0;padding:0;cursor:pointer;text-align:left}
+.fcol a:hover,.fcol button:hover{text-decoration:underline;text-underline-offset:3px}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;margin-top:clamp(36px,4vw,60px);padding-top:22px;border-top:1px solid #ffffff2e}
+.footer-bottom p{color:#a9a79f;font-size:13px;margin:0}
+@media(max-width:900px){.shortcuts{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-top{grid-template-columns:1fr}}
+@media(max-width:760px){.hero-intro{text-align:left}.hero-intro .hero-actions{justify-content:flex-start}.hero-intro h1{font-size:clamp(36px,10vw,60px)}.hero-lead{margin-left:0}.hero-works{justify-content:flex-start}.shortcuts{grid-template-columns:1fr}.shortcuts a{padding:13px 14px}.footer-cols{grid-template-columns:1fr 1fr}}
