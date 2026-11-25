@@ -13,6 +13,19 @@ Static landing page.
 
 Current entry point: `index.html`
 
+## Conținut (din 2026-11-25)
+
+Pagina vine din conceptul de site (`rostor-concept`, funcțiile `site()` și `legalPage()`), pus static, fără SPA:
+
+- `index.html`, `confidentialitate.html`, `cookies.html`;
+- `assets/site.css` (concept.css, resources.css, site.css), `assets/site.js` (demonstrația animată, meniul pe
+  telefon, „Setări cookies”), `assets/fonts/` (Anton, Inter, cu licențele), `assets/hero.webp`.
+
+Butoanele de cont duc direct la `https://app.rostor.ro/start` (cont nou) și `/cont` (intrare); termenii sunt cei
+din portal, `https://app.rostor.ro/termeni`. Site-ul nu setează cookie-uri și nu păstrează nimic în browser.
+Prețuri: acces anticipat gratuit, fără cote afișate. `assets/app.js`, `home.css`, `styles.css` și `signup.js`
+sunt ale paginii vechi și nu mai sunt folosite.
+
 ## Deployment and preview
 
 Cloudflare Workers Builds is connected to `robeger/rostor-site`.

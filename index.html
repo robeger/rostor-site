@@ -1,365 +1,95 @@
 <!doctype html>
 <html lang="ro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Rostor — oferta de piese, dintr-un mesaj</title>
-  <meta name="description" content="Scrii seria de șasiu și piesa cerută. Rostor găsește codul original, caută la furnizori și îți dă oferta gata de trimis, direct în Claude.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://rostor.ro/">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Rostor — Scrii seria de șasiu. Primești oferta.">
-  <meta property="og:description" content="Pentru magazinele de piese auto: codul original, prețurile de la furnizori și oferta pentru client, dintr-un singur mesaj.">
-  <meta property="og:url" content="https://rostor.ro/">
-  <meta property="og:locale" content="ro_RO">
-  <meta name="theme-color" content="#0B0E14">
-  <link rel="icon" href="/assets/rostor-logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="/assets/styles.css">
-  <link rel="stylesheet" href="/assets/home.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Rostor","url":"https://rostor.ro/","email":"robert@rostor.ro","telephone":"+40733285440","areaServed":"RO","founder":{"@type":"Person","name":"Robert Minciunescu"},"address":{"@type":"PostalAddress","addressLocality":"Pitești","addressRegion":"Argeș","addressCountry":"RO"}}</script>
-  <script defer src="/assets/app.js"></script>
-  <script defer src="/assets/signup.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#111111">
+<meta name="description" content="Rostor conectează asistentul tău AI la cataloagele și furnizorii de piese auto. De la seria de șasiu la ofertă, în aceeași conversație.">
+<title>Rostor — Piese auto. La un mesaj distanță.</title>
+<link rel="icon" href="/assets/rostor-logo.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
 <body>
-
-<header class="top">
-  <div class="top-inner">
-    <a class="brand" href="#top"><img src="/assets/rostor-logo.jpg" alt="" width="40" height="40"><strong>Rostor</strong></a>
-    <nav aria-label="Principal">
-      <a href="#ce-face">Ce face</a>
-      <a href="#incepi">Cum începi</a>
-      <a href="#cont">Contul tău</a>
-      <a href="#siguranta">Siguranță</a>
-      <a href="#intrebari">Întrebări</a>
-    </nav>
-    <div class="top-actions">
-      <a class="login" href="#" data-login data-track="login-header">Intră în cont</a>
-      <a class="btn primary small" href="#incepi" data-signup data-track="cta-header">Creează cont</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-<!-- HERO: ce face, din câteva cuvinte -->
-<section class="section dark hero" id="top">
-  <div class="container">
-    <div class="hero-grid">
-      <div>
-        <span class="kicker">pentru magazinele de piese auto</span>
-        <h1>Scrii seria de șasiu.<br><em>Primești oferta.</em></h1>
-        <p class="lead">Rostor îl leagă pe Claude de cataloagele și furnizorii de piese. Îi scrii ce cere clientul, iar el găsește codul original, caută prețurile și îți dă oferta gata de trimis.</p>
-        <div class="btns">
-          <a class="btn primary" href="#incepi" data-signup data-track="cta-hero">Creează cont</a>
-          <a class="btn ghost" href="#ce-face" data-track="cta-ce-face">Vezi cum lucrează</a>
-        </div>
-      </div>
-
-      <div class="doc hero-doc" aria-label="Exemplu de conversație în Claude">
-        <div class="doc-head"><b>Claude, cu Rostor</b><small>exemplu</small></div>
-        <div class="chat">
-          <div class="bubble me">WBA…K12345 plăcuțe și discuri față</div>
-          <div class="bubble it">
-            Bună ziua! Pentru BMW 320d E90 (06/2006):
-            <ul>
-              <li><span>Plăcuțe frână față</span><span class="num">247 lei</span></li>
-              <li><span>Discuri frână față (2 buc)</span><span class="num">546 lei</span></li>
-            </ul>
-            <div class="total"><span>Total, TVA inclus</span><span class="num">793 lei</span></div>
-            <small>Piesele au fost alese după seria de șasiu. Oferta OF-261110-0412.</small>
-          </div>
-          <div class="bubble me">fă-mi și PDF-ul pentru client</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="facts">
-      <div><b>Ce face</b><p>Din seria de șasiu și numele piesei face o ofertă cu preț final, pe care o trimiți clientului.</p></div>
-      <div><b>Ce problemă rezolvă</b><p>Nu mai cauți codul în catalog și apoi prețul pe fiecare site de furnizor, pentru fiecare cerere.</p></div>
-      <div><b>De ce Rostor</b><p>Lucrezi într-o conversație, cum ai scrie unui coleg. Nu înveți un program nou și nu schimbi nimic din ce folosești.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROBLEMA -->
-<section class="section">
-  <div class="container">
-    <div class="intro">
-      <span class="kicker">aceeași cerere, de două ori</span>
-      <h2>O ofertă îți ia azi minute bune.<em style="color:var(--amber-ink)">Poate lua un mesaj.</em></h2>
-    </div>
-    <div class="split">
-      <div class="panel today">
-        <h3>Azi</h3>
-        <ul>
-          <li>Cauți mașina în catalog după seria de șasiu</li>
-          <li>Găsești desenul și copiezi codul piesei</li>
-          <li>Intri pe site-ul fiecărui furnizor și cauți codul</li>
-          <li>Verifici dacă piesa găsită chiar se potrivește</li>
-          <li>Compari prețurile și pui adaosul</li>
-          <li>Scrii oferta de mână, pe WhatsApp</li>
-        </ul>
-      </div>
-      <div class="panel you">
-        <h3>Cu Rostor</h3>
-        <ul>
-          <li>Scrii seria și piesa, cu vorbele clientului</li>
-          <li>Primești oferta, cu variantele deja făcute</li>
-          <li>Ceri PDF-ul dacă îl vrea clientul</li>
-          <li>Tu decizi ce trimiți și cui</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CE FACE, PE PAȘI -->
-<section class="section day" id="ce-face" style="padding-top:0">
-  <div class="container">
-    <div class="intro">
-      <span class="kicker">ce se întâmplă după ce apeși Enter</span>
-      <h2>Patru lucruri pe care le făceai tu.</h2>
-      <p class="muted">Calculele și verificările le face Rostor, nu inteligența artificială. De aceea aceeași cerere dă același rezultat.</p>
-    </div>
-
-    <div class="timeline">
-
-      <article class="station" id="s1">
-        <div class="time">01</div>
-        <div class="txt">
-          <h3>Înțelege cererea.</h3>
-          <p>Scrii seria sau trimiți poza talonului. Piesa o spui cum o spune clientul: <strong>„kit distribuție”, „bieletă față”, „plăcuțe și discuri”.</strong></p>
-        </div>
-        <div class="doc">
-          <div class="doc-head"><b>Mașina</b><small>după seria de șasiu</small></div>
-          <div class="doc-body">
-            <div class="vin">WBA…K12345</div>
-            <div class="row"><span class="k">Mașina</span><span>BMW 320d E90</span></div>
-            <div class="row"><span class="k">Motor</span><span class="num">M47N2 · diesel</span></div>
-            <div class="row"><span class="k">Fabricată</span><span class="num">06/2006</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="station" id="s2">
-        <div class="time">02</div>
-        <div class="txt">
-          <h3>Găsește codul original.</h3>
-          <p>Caută piesa în catalogul producătorului, pentru mașina aceea. <strong>Nu ghicește după model și an.</strong></p>
-        </div>
-        <div class="doc">
-          <div class="doc-head"><b>Cod original</b><small>din catalog</small></div>
-          <div class="doc-body">
-            <div class="row"><span class="k">Plăcuțe frână față</span><span class="tag ok">cod găsit</span></div>
-            <div class="row"><span class="k">Discuri frână față</span><span class="tag ok">cod găsit</span></div>
-            <div class="row"><span class="k">Poziție</span><span>față, ambele părți</span></div>
-          </div>
-        </div>
-      </article>
-
-      <article class="station" id="s3">
-        <div class="time">03</div>
-        <div class="txt">
-          <h3>Caută la furnizori și verifică.</h3>
-          <p>Caută după codul original la toți furnizorii deodată. Piesele asociate greșit cu un cod sunt scoase, <strong>iar motivul îl vezi în notele pentru tine.</strong></p>
-        </div>
-        <div class="doc">
-          <div class="doc-head"><b>Ce a găsit</b><small>după codul original</small></div>
-          <div class="doc-body">
-            <table class="compare">
-              <thead><tr><th>Variantă</th><th class="hide-s">Potrivire</th><th class="r">Preț</th></tr></thead>
-              <tbody>
-                <tr><td>Economic</td><td class="hide-s">verificată</td><td class="r num">189 lei</td></tr>
-                <tr class="best"><td>Mediu</td><td class="hide-s">verificată</td><td class="r num">247 lei</td></tr>
-                <tr><td>Original</td><td class="hide-s">verificată</td><td class="r num">412 lei</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </article>
-
-      <article class="station" id="s4">
-        <div class="time">04</div>
-        <div class="txt">
-          <h3>Scrie oferta.</h3>
-          <p>Text simplu pentru WhatsApp sau document PDF cu datele firmei tale. <strong>Prețul tău de achiziție nu apare niciodată la client.</strong></p>
-        </div>
-        <div class="doc">
-          <div class="doc-head"><b>Ofertă OF-261110-0412</b><small>valabilă 3 zile</small></div>
-          <div class="doc-body">
-            <div class="row"><span>Plăcuțe frână față</span><span class="num">247 lei</span></div>
-            <div class="row"><span>Discuri frână față (2 buc)</span><span class="num">546 lei</span></div>
-            <div class="row"><span><b>Total, TVA inclus</b></span><span class="num"><b>793 lei</b></span></div>
-          </div>
-          <div class="doc-foot"><span class="fake-btn">Text pentru WhatsApp</span><span class="fake-btn go">PDF</span></div>
-        </div>
-      </article>
-
-      <article class="station" id="s5">
-        <div class="time">și</div>
-        <div class="txt">
-          <h3>Verifică factura de la furnizor.</h3>
-          <p>Îi dai factura din e-Factura și îți spune dacă totalurile, TVA-ul și furnizorul sunt în regulă. <strong>Recepția direct în programul tău de gestiune</strong> <span class="soon">în lucru</span></p>
-        </div>
-        <div class="doc">
-          <div class="doc-head"><b>Factura furnizorului</b><small>din e-Factura</small></div>
-          <div class="doc-body">
-            <div class="row"><span>Totaluri pe linii</span><span class="tag ok">corecte</span></div>
-            <div class="row"><span>TVA</span><span class="tag ok">corect</span></div>
-            <div class="row"><span>Furnizor, la ANAF</span><span class="tag ok">activ</span></div>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- CUM ÎNCEPI -->
-<section class="section" id="incepi" style="padding-top:0">
-  <div class="container">
-    <div class="intro">
-      <span class="kicker">cum începi</span>
-      <h2>Trei pași. Restul îl face Claude cu tine.</h2>
-      <p class="muted">Nu completezi formulare de setări. După ce legi contul, Claude te întreabă ce are nevoie să știe și configurează singur.</p>
-    </div>
-    <div class="setup">
-      <article><h3>Creezi contul</h3><p class="muted">Emailul și CUI-ul firmei. Denumirea, adresa și datele fiscale le luăm de la ANAF. Citești și accepți termenii.</p></article>
-      <article><h3>Legi asistentul</h3><p class="muted">Alegi Claude și apeși „Adaugă Rostor”, apoi „Autorizează”. Nu copiezi adrese și nu lipești coduri.</p></article>
-      <article><h3>Răspunzi la câteva întrebări</h3><p class="muted">În Claude: cu cât adaos vinzi, cu ce program facturezi. Apoi îți propune ce poți face și faci prima ofertă.</p></article>
-    </div>
-    <p class="needs"><strong>Ce îți trebuie:</strong> un abonament Claude plătit (Pro sau Max) și calculatorul din magazin. Poți căuta la furnizori și fără cont la ei; cu contul tău vezi prețurile tale.</p>
-    <div class="promise">
-      <p>Te-ai răzgândit? Scrii „schimbă adaosul” sau „vreau alt program de facturare” și se schimbă pe loc.</p>
-      <div>
-        <a class="btn ink" href="https://wa.me/40733285440?text=Bun%C4%83%20ziua%2C%20am%20un%20magazin%20de%20piese%20auto%20%C8%99i%20vreau%20o%20invita%C8%9Bie%20Rostor." target="_blank" rel="noopener" data-signup data-track="cta-incepi">Creează cont</a>
-        <p class="invite" data-invite-only>În perioada de pilot, conturile se deschid cu invitație. Butonul îți deschide WhatsApp ca să o ceri.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTUL TĂU -->
-<section class="section dark" id="cont">
-  <div class="container">
-    <div class="intro">
-      <span class="kicker">contul tău rostor</span>
-      <h2>Un singur loc în care vezi <em>cine are acces la ce.</em></h2>
-      <p class="muted">Lucrezi în Claude, dar tot ce ține de firmă, acces și conturi conectate stă în contul tău de pe rostor.ro. De acolo oprești orice, oricând.</p>
-    </div>
-    <div class="programs">
-      <div><b>Firma și setările magazinului</b><span>Datele din antetul ofertelor, adaosul, valabilitatea ofertei.</span></div>
-      <div><b>Asistenți conectați</b><span>Ce asistent are acces, de când și cu ce drepturi. Un buton îl deconectează.</span></div>
-      <div><b>Conturi conectate</b><span>Cataloagele și furnizorii, cu starea fiecăruia și data ultimei verificări.</span></div>
-      <div><b>Echipa</b><span>Cine din magazin are acces. Vânzătorii nu văd prețul de achiziție.</span></div>
-      <div><b>Aprobări</b><span>Ce așteaptă confirmarea ta înainte să plece din firmă.</span></div>
-      <div><b>Termeni și documente</b><span>Ce ai acceptat, când, și copia documentului.</span></div>
-      <div><b>Jurnal</b><span>Ce s-a făcut în numele firmei și de către cine.</span></div>
-      <div><b>Datele tale</b><span>Le exporți sau le ștergi când vrei.</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- SIGURANȚĂ -->
-<section class="section" id="siguranta">
-  <div class="container">
-    <div class="intro">
-      <span class="kicker">tu ai ultimul cuvânt</span>
-      <h2>Nimic nu pleacă din magazin fără să știi.</h2>
-      <p class="muted">Oferta este o ciornă pentru tine. Tu o citești și tu o trimiți.</p>
-    </div>
-    <div class="split">
-      <div class="panel">
-        <h3>Se face singur</h3>
-        <ul>
-          <li>Găsirea codului original după seria de șasiu</li>
-          <li>Căutarea la furnizori și verificarea potrivirii</li>
-          <li>Calculul prețului cu adaosul tău</li>
-          <li>Textul ofertei și documentul PDF</li>
-          <li>Verificarea facturii de la furnizor</li>
-        </ul>
-      </div>
-      <div class="panel you">
-        <h3>Rămâne la tine</h3>
-        <ul>
-          <li>Trimiterea ofertei către client</li>
-          <li>Orice comandă la furnizor</li>
-          <li>Parolele tale: te autentifici pe site-ul furnizorului, nu la noi</li>
-          <li>Cine din echipă vede ce</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PREȚURI (de completat după decizia pe pachete) -->
-<section class="section dark" id="preturi">
-  <div class="container">
-    <div class="price-box">
-      <div>
-        <span class="kicker">prețuri</span>
-        <h2>Abonament lunar, <em>pe magazin.</em></h2>
-        <p class="muted" style="margin-top:18px;font-size:1.1rem">Pachetele le publicăm în curând. Abonamentul Claude îl plătești separat, direct la ei.</p>
-      </div>
-      <div>
-        <ul>
-          <li>Toți vânzătorii din magazin</li>
-          <li>Cataloagele și furnizorii disponibili</li>
-          <li>Ajutor pe WhatsApp și la telefon</li>
-        </ul>
-        <div class="btns" style="margin-top:22px"><a class="btn primary" href="#contact" data-track="cta-preturi">Află prețul</a></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ÎNTREBĂRI -->
-<section class="section faq" id="intrebari">
-  <div class="container faq-wrap">
-    <div class="intro center">
-      <span class="kicker">întrebări frecvente</span>
-      <h2>Ce ne întreabă magazinele.</h2>
-    </div>
-    <details><summary>Ce este Claude și de ce am nevoie de el?</summary><p>Claude este un asistent cu inteligență artificială, la fel ca ChatGPT. Tu vorbești cu el, iar Rostor îi dă acces la cataloage și furnizori. Ai nevoie de un abonament plătit la Claude, pe care îl faci direct la ei. ChatGPT urmează.</p></details>
-    <details><summary>Trebuie să am cont la furnizori?</summary><p>Nu, ca să începi. Rostor caută și fără cont și îți arată prețurile publice. Când conectezi contul tău de la un furnizor, vezi prețurile tale.</p></details>
-    <details><summary>Cât de sigură e potrivirea piesei?</summary><p>Piesa se caută după codul original luat din catalog pentru seria de șasiu a mașinii, iar fiecare produs găsit este verificat pe mașină. Când codul nu a putut fi confirmat, oferta spune asta vizibil și verifici tu înainte de comandă.</p></details>
-    <details><summary>Poate trimite ceva clientului fără mine?</summary><p>Nu. Rostor pregătește oferta. Tu o copiezi sau descarci documentul și tu o trimiți.</p></details>
-    <details><summary>Îmi dau parolele cuiva?</summary><p>Nu. Te autentifici pe site-ul furnizorului, în browserul tău. Claude nu vede parolele niciodată.</p></details>
-    <details><summary>Dacă mă răzgândesc la o setare?</summary><p>Îi spui lui Claude ce vrei să schimbi sau schimbi din contul tău de pe rostor.ro. Orice conexiune se poate opri oricând.</p></details>
-    <details><summary>Trebuie să renunț la programul de facturare?</summary><p>Nu. Rămâi pe programul tău. Rostor nu îl înlocuiește.</p></details>
-    <details><summary>Datele magazinului le mai vede cineva?</summary><p>Nu. Datele fiecărui magazin sunt ținute separat, în Uniunea Europeană. Nu le vede alt client și nu le dăm nimănui.</p></details>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section dark" id="contact">
-  <div class="container contact">
-    <div>
-      <span class="kicker">contact</span>
-      <h2>Ai o întrebare <em>înainte să începi?</em></h2>
-      <p class="muted" style="margin-top:18px;font-size:1.12rem">Scrie-ne. Îți arătăm o ofertă făcută pe o mașină de-a ta, ca să vezi cum iese.</p>
-      <div class="btns">
-        <a class="btn primary" href="https://wa.me/40733285440?text=Bun%C4%83%20ziua%2C%20am%20un%20magazin%20de%20piese%20auto%20%C8%99i%20vreau%20s%C4%83%20discut%C4%83m%20despre%20Rostor." target="_blank" rel="noopener" data-track="cta-whatsapp">Scrie-ne pe WhatsApp</a>
-        <a class="btn ghost" href="mailto:robert@rostor.ro?subject=Rostor%20-%20magazin%20piese%20auto" data-track="cta-email">Trimite un e-mail</a>
-      </div>
-    </div>
-    <div class="contact-list">
-      <div><strong>Robert Minciunescu</strong>fondator Rostor</div>
-      <div><strong>Telefon / WhatsApp</strong><a href="tel:+40733285440" data-track="cta-tel">+40 733 285 440</a></div>
-      <div><strong>E-mail</strong><a href="mailto:robert@rostor.ro">robert@rostor.ro</a></div>
-      <div><strong>Unde lucrăm</strong>În toată țara, la distanță. Sediul: Pitești, Argeș.</div>
-    </div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="container">
-    <span>© <span data-year>2026</span> Rostor · pentru magazinele de piese auto</span>
-    <span>Pitești, Argeș · robert@rostor.ro · +40 733 285 440</span>
-  </div>
-</footer>
-
+<svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<symbol id="r-mark" viewBox="0 0 48 48"><path fill="currentColor" d="M0 2h32c9 0 15 7 15 15 0 6-3 11-9 14l10 15H34L21 29l7-13H11L0 2Zm0 16h11l11 12L0 46V18Z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24"><path d="M3 12h17m-7-7 7 7-7 7"/></symbol>
+<symbol id="i-back" viewBox="0 0 24 24"><path d="M21 12H4m7-7-7 7 7 7"/></symbol>
+<symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 2 11 6-11 6L1 8l11-6Zm-9 10-2 1 11 6 11-6-2-1M3 17l-2 1 11 6 11-6-2-1"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M13 2H5a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10Zm0 0v8h8M7 13h10M7 17h8"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h13v11H8m7-8h4l4 5v3h-3m-5 0h1M1 10h5m-5 4h3"/><circle cx="6" cy="17" r="2"/><circle cx="18" cy="17" r="2"/></symbol>
+<symbol id="i-search" viewBox="0 0 24 24"><circle cx="10" cy="10" r="7"/><path d="m15.5 15.5 6 6"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="m10 2-.7 3.2-2 .9L4.5 5 2 9l2.5 2v2L2 15l2.5 4 2.8-1.1 2 .9.7 3.2h4l.7-3.2 2-.9 2.8 1.1 2.5-4-2.5-2v-2L22 9l-2.5-4-2.8 1.1-2-.9L14 2Z"/><circle cx="12" cy="12" r="3.6"/></symbol>
+<symbol id="i-bot" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="4"/><path d="M12 7V4M1 12v4m22-4v4m-15-3h.01m7.99 0h.01"/><circle cx="12" cy="3" r="1"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="m12 2 10 6v9l-10 5-10-5V8Zm0 10v10M2 8l10 4 10-4M7 5l10 5"/></symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M4 12h16M12 4v16"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="m4 12 5 5L20 6"/></symbol>
+<symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5m0-8h.01"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M4 22v-2a8 8 0 0 1 16 0v2"/></symbol>
+<symbol id="i-logout" viewBox="0 0 24 24"><path d="M10 3H4v18h6m2-9h10m-4-4 4 4-4 4"/></symbol>
+<symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></symbol>
+<symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 1v22M1 12h22M4 4l16 16M20 4 4 20M8 2l8 20M2 16l20-8"/></symbol>
+<symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-9 9H4l2-4a9 9 0 1 1 15-5Z"/><path d="M8 9h8m-8 4h5"/></symbol>
+<symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+<symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+<symbol id="i-copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M15 5V4a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h1"/></symbol>
+</svg>
+<a class="skip" href="#principal">Sari la conținut</a>
+<div id="app"><header class="header"><div class="header-row wrap"><a href="/" class="brand" aria-label="Rostor, pagina principală"><svg aria-hidden="true"><use href="#r-mark"></use></svg>rostor.</a><nav class="nav" aria-label="Navigare site"><a href="#produs">Produs</a><a href="#cum-functioneaza">Cum funcționează</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a><a class="mobile-login" href="https://app.rostor.ro/cont">Intră în cont</a></nav><div class="header-actions"><a class="btn btn-outline login" href="https://app.rostor.ro/cont">Intră în cont</a><a class="btn btn-yellow " href="https://app.rostor.ro/start">Creează cont</a><button class="menu-toggle" type="button" aria-label="Meniu" aria-expanded="false" data-action="menu"><svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg></button></div></div></header>
+    <main id="principal" tabindex="-1">
+    <section class="hero dark"><div class="wrap hero-grid"><div class="hero-copy">
+    <h1><span class="first-line">Piese auto.</span><span>La un mesaj</span><span>distanță.</span></h1>
+    <p>Clientul îți dă VIN-ul sau talonul. Rostor găsește piesa, compară furnizorii tăi și face oferta cu prețurile tale, direct în Claude sau ChatGPT.</p>
+    <div class="hero-actions"><a class="btn btn-yellow btn-large" href="https://app.rostor.ro/start">Creează cont</a><a class="btn btn-outline btn-large" href="#produs">Vezi un exemplu</a></div>
+    <p class="hero-note"><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Acces anticipat gratuit · pe web, desktop și telefon</p>
+    </div><div class="hero-visual"><img class="hero-art" src="/assets/hero.webp" width="1254" height="1254" fetchpriority="high" alt=""></div></div></section>
+    <section class="section product" id="produs"><div class="wrap">
+    <div class="product-intro"><h2>De la cerere <span>la ofertă.</span></h2><p>Scrii cererea cum ai scrie-o unui coleg. Rostor caută la furnizorii tăi, iar tu alegi ce intră în ofertă. Vezi cinci feluri în care se poate porni.</p></div>
+    <div class="live-demo" id="exemple">
+    <div class="ld-side"><div class="ld-tabs" role="group" aria-label="Alege un scenariu"><button type="button" data-demo-pick="0" aria-pressed="true"><b>Cu diagrama producătorului</b><small>Alegi piesa din schema originală</small><i aria-hidden="true"></i></button><button type="button" data-demo-pick="1" aria-pressed="false"><b>Direct la furnizori</b><small>Ai deja codul piesei</small><i aria-hidden="true"></i></button><button type="button" data-demo-pick="2" aria-pressed="false"><b>Din ce spune clientul</b><small>Marcă, model și an, fără VIN</small><i aria-hidden="true"></i></button><button type="button" data-demo-pick="3" aria-pressed="false"><b>Din poza talonului</b><small>Faci o poză și o trimiți</small><i aria-hidden="true"></i></button><button type="button" data-demo-pick="4" aria-pressed="false"><b>Răspuns ca listă</b><small>Direct în conversație, fără panou</small><i aria-hidden="true"></i></button></div>
+    <ol class="ld-steps"><li aria-current="step">Scrii VIN-ul și piesa</li><li>Rostor identifică mașina</li><li>Alegi codul din diagramă</li><li>Vezi prețurile la furnizori</li><li>Bifezi și primești oferta</li></ol>
+    <button type="button" class="ld-toggle" data-demo-toggle=""><svg class="icon" aria-hidden="true"><use href="#i-pause"></use></svg> Pauză</button></div>
+    <div class="ld-window"><div class="ld-bar"><span class="ld-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Conversație în Claude sau ChatGPT</span><small>Date și prețuri fictive</small></div>
+    <div class="ld-chat" id="ld-chat"><div class="ld-msg ld-user"><p>Plăcuțe frână față pentru VIN WVWZZZ1KZAW000001</p></div></div>
+    <div class="ld-input"><span id="ld-typing" class="ld-placeholder">Scrie un mesaj…</span><span class="ld-send" aria-hidden="true"><svg class="icon" aria-hidden="true"><use href="#i-arrow"></use></svg></span></div></div></div>
+    <ol class="feature-steps feature-row"><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg></div><div><h3>Identifici piesa</h3><p>Pornești de la seria de șasiu, de la talon sau de la codul piesei. Rostor găsește codul original și echivalentele.</p></div></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg></div><div><h3>Compari la furnizori</h3><p>Vezi prețul și stocul la furnizorii tăi, cu discounturile din conturile tale.</p></div></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg></div><div><h3>Trimiți oferta</h3><p>Prețul se calculează după regulile tale, iar oferta pleacă în PDF sau Excel, cu antetul și seria magazinului.</p></div></li></ol></div></section>
+    <section class="section benefits" id="magazin"><div class="wrap"><h2 class="site-h2">Tot magazinul, <span>nu doar căutarea.</span></h2>
+    <ul class="benefit-grid"><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-gear"></use></svg></div><h3>Prețuri după regulile tale</h3><p>Adaos pe trepte de preț, pe categorie și pe marcă. Service-urile partenere primesc automat condițiile negociate.</p></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg></div><h3>Oferte cu seria ta</h3><p>Numerotare proprie sau aceeași serie ca proformele din programul de contabilitate. Antet, valabilitate și garanție, setate o singură dată.</p></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg></div><h3>Clienți care nu se pierd</h3><p>Fiecare cerere lasă o fișă: telefon, mașini, oferte. Ofertele fără răspuns și mementourile apar singure în lista zilei.</p></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-box"></use></svg></div><h3>Recepția facturilor</h3><p>Încarci factura e-Factura de la furnizor. Rostor verifică totalurile și TVA-ul și pregătește importul în Saga sau SmartBill.</p></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg></div><h3>Cifrele zilei</h3><p>Oferte trimise, vândute, valoare și marjă, pe perioada aleasă. Tot ce cere atenție, într-o singură listă.</p></li><li><div class="icon-block"><svg class="icon" aria-hidden="true"><use href="#i-spark"></use></svg></div><h3>Echipa ta, în același cont</h3><p>Fiecare vânzător intră cu contul lui, iar jurnalul arată cine a făcut fiecare ofertă.</p></li></ul>
+    </div></section>
+    <section class="section dark workflow" id="cum-functioneaza"><div class="wrap"><div class="workflow-heading"><h2>Rostor, în asistentul tău.</h2><p>Funcționează în Claude și ChatGPT: în browser, în aplicația de desktop și pe telefon.</p></div>
+    <ol class="steps"><li><strong aria-hidden="true">01</strong><div><h3>Creezi contul</h3><p>Contul magazinului, gratuit în accesul anticipat.</p></div></li><li><strong aria-hidden="true">02</strong><div><h3>Conectezi asistentul</h3><p>Adaugi Rostor în Claude sau ChatGPT și aprobi accesul la firma ta.</p></div></li><li><strong aria-hidden="true">03</strong><div><h3>Ceri prima ofertă</h3><p>Scrii VIN-ul și piesa într-o conversație nouă, pe web, desktop sau telefon.</p></div></li></ol>
+    <div class="works-with"><h3>Te poți conecta la</h3><dl><dt>Asistenți</dt><dd><span>Claude</span><span>ChatGPT</span></dd><dt>Furnizori</dt><dd><span>ePiesa</span><span>Autokarma</span><span>Bárdi Auto</span><span>Unix Auto</span><span class="soon">Inter Cars · în curând</span><span class="soon">APEC Auto · în curând</span></dd><dt>Cataloage</dt><dd><span>Partsouq</span><span>TecDoc</span></dd><dt>Contabilitate</dt><dd><span>SmartBill</span><span>Saga</span><span class="soon">ANAF SPV · în curând</span></dd></dl><p>Te conectezi cu contul tău, deci vezi prețurile și discounturile tale. Lipsește furnizorul tău? <a href="mailto:robert@rostor.ro?subject=Integrare%20furnizor">Cere integrarea</a>.</p></div></div></section>
+    <section class="section pricing" id="preturi"><div class="wrap"><h2 class="site-h2">Gratuit, <span>în accesul anticipat.</span></h2>
+    <ul class="price-grid">
+<li class="price-card"><h3>Acces anticipat</h3><p class="price">0 lei <small>/ lună</small></p><p>Folosește Rostor pe cererile tale reale, cu furnizorii și cataloagele tale.</p>
+<ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Toate funcțiile din portal și din asistent</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Te conectezi cu conturile tale la furnizori și cataloage</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Fără card și fără obligații</li></ul>
+<a class="btn btn-yellow " href="https://app.rostor.ro/start">Creează cont</a></li>
+<li class="price-card"><h3>Pilot</h3><p class="price">0 lei <small>/ lună</small></p><p>Pentru magazinele care lucrează zilnic cu Rostor și ne ajută să-l construim.</p>
+<ul><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Configurare împreună, la o primă întâlnire</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Integrarea furnizorilor și cataloagelor pe care le folosești</li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg> Funcțiile noi pornesc de la ce lipsește la tine</li></ul>
+<a class="btn btn-black " href="mailto:robert@rostor.ro?subject=Acces%20la%20pilotul%20Rostor">Cere acces la pilot</a></li>
+</ul>
+<p class="price-note">Ai cont la un catalog sau la un furnizor care lipsește din listă? <a href="mailto:robert@rostor.ro?subject=Integrare%20furnizor">Cere integrarea</a>. Planurile plătite vin după accesul anticipat și le anunțăm din timp.</p></div></section>
+    <section class="section safety" id="siguranta"><div class="wrap safety-grid"><h2 class="site-h2">Datele magazinului <span>rămân ale tale.</span></h2>
+    <ul class="safety-list"><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><div><h3>Parolele furnizorilor nu intră în conversație</h3><p>Rămân în Rostor, separat de conversații, și nu ajung la asistent.</p></div></li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><div><h3>Rostor nu comandă și nu facturează singur</h3><p>Comenzile și documentele fiscale pleacă doar după aprobarea ta.</p></div></li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><div><h3>Accesul se poate opri oricând</h3><p>Deconectezi asistentul sau un furnizor din portal, cu efect imediat.</p></div></li><li><svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg><div><h3>Știi cine a făcut ce</h3><p>Fiecare membru are rolul lui, iar jurnalul păstrează toate acțiunile.</p></div></li></ul></div></section>
+    <section class="section dark pilot" id="pilot"><div class="wrap pilot-grid"><div><h2 class="site-h2">Construim Rostor <span>cu primele magazine.</span></h2>
+    <p class="pilot-lead">Căutăm magazine de piese auto care fac zilnic oferte și vor să lucreze mai repede.</p><a class="btn btn-yellow btn-large" href="mailto:robert@rostor.ro?subject=Acces%20la%20pilotul%20Rostor">Vreau în pilot</a></div>
+    <ol class="pilot-points"><li><strong aria-hidden="true">01</strong><div><h3>Configurare împreună</h3><p>Conectăm furnizorii, regulile de preț și programul de contabilitate la o primă întâlnire.</p></div></li><li><strong aria-hidden="true">02</strong><div><h3>Decizi ce urmează</h3><p>Funcțiile noi pornesc de la ce lipsește în magazinele din pilot.</p></div></li><li><strong aria-hidden="true">03</strong><div><h3>Fără cost</h3><p>Planul Pilot e gratuit pe toată durata pilotului.</p></div></li></ol></div></section>
+    <section class="section faq" id="intrebari"><div class="wrap faq-grid"><h2>Întrebări<br> frecvente</h2>
+    <div class="questions"><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-bot"></use></svg> <span>Trebuie să schimb asistentul pe care îl folosesc?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Nu. Rostor se adaugă în Claude sau ChatGPT, în aplicația pe care o folosești deja: în browser, pe desktop sau pe telefon. Instalarea depinde de aplicație și de regulile spațiului tău de lucru.</p></details><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-truck"></use></svg> <span>Cu ce furnizori și cataloage funcționează?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Te poți conecta la furnizorii din lista de mai sus cu contul tău, deci vezi prețurile cu discounturile tale. În portal alegi ce surse folosește asistentul. Dacă furnizorul tău lipsește, ne poți cere integrarea.</p></details><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-file"></use></svg> <span>Cu ce programe de contabilitate merge?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Cu SmartBill, prin API, și cu Saga, prin fișiere de import. Rostor pregătește recepția și proformele, iar documentele fiscale se emit doar cu aprobarea ta.</p></details><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-info"></use></svg> <span>Ce date primește Rostor?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Doar ce trebuie pentru căutare și ofertă: seria de șasiu, piesa cerută, clientul căruia îi trimiți oferta. Parolele furnizorilor rămân în afara conversației.</p></details><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-layers"></use></svg> <span>Cât costă?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>În accesul anticipat, Rostor e gratuit. Planurile plătite vin după această perioadă și le anunțăm din timp.</p></details><details name="faq"><summary><svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg> <span>Ce limite are?</span> <svg class="icon" aria-hidden="true"><use href="#i-plus"></use></svg></summary><p>Acoperirea diferă după vehicul și sursă, iar stocurile și prețurile se pot schimba. Verifici potrivirea piesei înainte de a trimite oferta sau de a comanda.</p></details></div></div></section>
+    <section class="closing contact" id="contact"><div class="wrap cta-row">
+    <h2>Vezi cum ar funcționa<br> în magazinul tău.</h2>
+    <div class="contact-links"><a class="btn btn-black btn-large" href="https://app.rostor.ro/start">Creează cont gratuit</a>
+    <a href="mailto:robert@rostor.ro?subject=%C3%8Entrebare%20despre%20Rostor">robert@rostor.ro</a></div>
+  </div></section>
+    </main>
+    <footer class="footer resources-footer"><div class="wrap"><a href="/" class="brand" aria-label="Rostor, pagina principală"><svg aria-hidden="true"><use href="#r-mark"></use></svg>rostor.</a>
+    <nav aria-label="Resurse și informații legale"><a href="#produs">Produs</a><a href="#preturi">Prețuri</a><a href="#intrebari">Întrebări</a><a href="https://app.rostor.ro/termeni">Termeni și condiții</a><a href="/confidentialitate">Confidențialitate</a><a href="/cookies">Politica de cookies</a><button type="button" data-action="cookie-settings">Setări cookies</button></nav>
+  </div></footer><dialog class="cookie-dialog" id="cookie-dialog" aria-labelledby="cookie-title"><h2 id="cookie-title">Setări cookies</h2>
+    <p>Site-ul rostor.ro nu setează cookie-uri și nu păstrează nimic în browser.</p><p><strong>Analiză și marketing</strong><br>Nu le folosim.</p>
+    <form method="dialog"><button class="btn btn-yellow" autofocus>Închide</button></form>
+  </dialog></div>
+<script src="/assets/site.js" defer></script>
 </body>
 </html>
