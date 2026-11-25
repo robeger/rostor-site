@@ -197,6 +197,32 @@ function demoToggleLabel() {
 }
 
 
+// Formularul de cereri: butoanele „Vreau în pilot” și „Cere integrarea” aleg tipul; câmpul pentru catalog apare doar
+// la integrare; trebuie lăsat un telefon sau un email. Fără JavaScript, formularul merge la fel (serverul verifică).
+const requestForm = document.querySelector('.request-form');
+function requestKind(kind) {
+  if (!requestForm) return;
+  const radio = requestForm.querySelector(`input[name="tip"][value="${kind}"]`);
+  if (radio) radio.checked = true;
+  const source = requestForm.querySelector('.request-source');
+  source.hidden = kind !== 'integrare';
+  source.querySelector('input').required = kind === 'integrare';
+}
+if (requestForm) {
+  requestForm.addEventListener('change', event => { if (event.target.name === 'tip') requestKind(event.target.value); });
+  requestForm.addEventListener('submit', event => {
+    const has = name => requestForm.elements[name].value.trim() !== '';
+    const error = requestForm.querySelector('.request-error');
+    error.hidden = has('telefon') || has('email');
+    if (!error.hidden) { event.preventDefault(); requestForm.elements.telefon.focus(); }
+  });
+  const wanted = new URLSearchParams(location.search).get('tip');
+  requestKind(['pilot', 'integrare', 'intrebare'].includes(wanted) ? wanted : requestForm.querySelector('input[name="tip"]:checked').value);
+}
+document.addEventListener('click', event => {
+  const tip = event.target.closest('[data-tip]');
+  if (tip && requestForm) requestKind(tip.dataset.tip);
+});
 document.addEventListener('click', event => {
   const control = event.target.closest('[data-action]');
   const nav = document.querySelector('.header .nav'), toggle = document.querySelector('.menu-toggle');
@@ -207,4 +233,28 @@ document.addEventListener('click', event => {
   if (control.dataset.action === 'cookie-settings') document.getElementById('cookie-dialog').showModal();
   if (control.dataset.action === 'menu' && nav) control.setAttribute('aria-expanded', String(nav.classList.toggle('open')));
 });
+})();
+// Pagina /multumim: după formular, serverul trimite aici ?tip=… (reușit) sau ?eroare=… (cererea nu s-a salvat).
+(function () {
+  const box = document.querySelector('[data-thanks]');
+  if (!box) return;
+  const q = new URLSearchParams(location.search), error = q.get('eroare');
+  const reasons = {
+    contact: 'Lasă-ne un telefon sau un email, ca să te putem contacta.',
+    nume: 'Completează numele.',
+    email: 'Adresa de email nu pare corectă.',
+    telefon: 'Numărul de telefon nu pare corect.',
+    sursa: 'Spune-ne la ce catalog sau furnizor ai cont.',
+    lung: 'Unul dintre câmpuri e prea lung.',
+    'prea-multe': 'Am primit deja mai multe cereri de la tine. Încearcă din nou peste o oră sau scrie-ne la robert@rostor.ro.'
+  };
+  if (error) {
+    box.querySelector('[data-title]').textContent = 'Cererea nu a plecat.';
+    box.querySelector('[data-text]').textContent = reasons[error] || 'Ceva nu a mers. Încearcă din nou sau scrie-ne la robert@rostor.ro.';
+    const back = box.querySelector('[data-back]');
+    back.textContent = 'Înapoi la formular';
+    back.href = '/#cerere';
+  } else if (q.get('tip') === 'integrare') {
+    box.querySelector('[data-text]').textContent = 'Am primit cererea de integrare. Te sunăm ca să vedem împreună ce cont ai și cum îl conectăm.';
+  }
 })();
