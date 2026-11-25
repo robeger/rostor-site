@@ -253,7 +253,7 @@ document.addEventListener('click', event => {
     box.querySelector('[data-text]').textContent = reasons[error] || 'Ceva nu a mers. Încearcă din nou sau scrie-ne la robert@rostor.ro.';
     const back = box.querySelector('[data-back]');
     back.textContent = 'Înapoi la formular';
-    back.href = '/#cerere';
+    back.href = '/contact';
   } else if (q.get('tip') === 'integrare') {
     box.querySelector('[data-text]').textContent = 'Am primit cererea de integrare. Te sunăm ca să vedem împreună ce cont ai și cum îl conectăm.';
   }
